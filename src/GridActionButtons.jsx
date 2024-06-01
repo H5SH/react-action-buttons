@@ -1,67 +1,66 @@
-const GridActionButtons = ({
+const ActionButtons = ({
     data,
+
+    styles = {},
 
     onClickView,
     onClickUpdate,
     onClickDelete,
     onClickComment,
-    onClickClaim,
 
     viewPermission,
     updatePermission,
     deletePermission,
     commentPermission,
-    claimPermission,
+
+    viewClassName='',
+    updateClassName='',
+    deleteClassName='',
+    commentClassName='',
 }) => (
     <>
         {viewPermission && (
             <button
-                className='btn btn-icon btn-bg-info btn-active-color-black btn-sm me-1'
                 onClick={() => onClickView(data)}
+                className={`${viewClassName} btn`}
+                style={styles.view}
             >
-                <i className='bi bi-eye-fill fs-4 px-0'></i>
+                <i class="gg-eye"></i>
             </button>
         )}
 
         {updatePermission && (
             <button
-                className='btn btn-icon btn-bg-success btn-active-color-white btn-sm me-1'
                 onClick={() => onClickUpdate(data)}
+                className={`${updateClassName} btn`}
+                style={styles.update}
             >
-                <i className='bi bi-pencil-fill fs-4 px-0'></i>
+                <i className='gg-pen'></i>
             </button>
         )}
 
         {deletePermission && (
             <button
                 onClick={() => onClickDelete(data)}
-                className='btn btn-icon btn-bg-danger btn-active-color-white btn-sm me-1'
-            >
-                <i className='bi bi-trash-fill fs-4 px-0'></i>
+                className={`${deleteClassName} btn`}
+                style={styles.delete}
+                >
+                <i className='gg-trash'></i>
             </button>
         )}
-        {claimPermission && (
-            <>
-                <button
-                    onClick={() => onClickClaim(data)}
-                    className='btn btn-sm btn-primary me-3'
-                >
-                    Make Claim
-                </button>
-            </>
-        )}
-        {commentPermission ? (
+        {commentPermission && (
             <>
                 <button
                     onClick={() => onClickComment(data)}
-                    className='btn btn-icon btn-bg-success btn-active-color-white btn-sm me-1'
+                    className={`${commentClassName} btn`}
+                    style={styles.comment}
                 >
-                    <i className='bi bi-chat-dots-fill fs-4 px-0'></i>
+                    <i className='gg-comment'></i>
                 </button>
             </>
 
-        ) : null}
+        )}
     </>
 )
 
-export default GridActionButtons
+export default ActionButtons
