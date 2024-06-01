@@ -1,6 +1,6 @@
 {
-  "name": "react-action-buttons",
-  "version": "1.0.0",
+  "name": "react-crud-buttons",
+  "version": "1.0.1",
   "description": "View, Edit, Delete, Comment buttons for react apps",
   "author": "H5SH",
   "license": "MIT",
@@ -28,6 +28,10 @@
   "keywords": [
     "react",
     "action",
-    "buttons"
+    "buttons",
+    "View",
+    "Update",
+    "Delete",
+    "Comments"
   ]
 }
